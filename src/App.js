@@ -82,7 +82,7 @@ export default function App() {
     try{  
       setIsLoading(true)
       setError("")
-      const res = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${keyApi}&s=${query}`,{signal: controller.signal})
+      const res = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${keyApi}&s=${query}`,{signal: controller.signal})
       
       if(!res.ok) throw new Error ("اینترنت قطع شده است")
       const data = await res.json();
@@ -325,7 +325,7 @@ function MovieDetails({selectedId,CloseSelectedMovie,handleAddWatch,watched}){
   useEffect(function(){
     async function fetchMovie(){
       setLoading(true)
-      const res = await fetch(`http://www.omdbapi.com/?apikey=${keyApi}&i=${selectedId}`)
+      const res = await fetch(`https://www.omdbapi.com/?apikey=${keyApi}&i=${selectedId}`)
       const data = await res.json()
       setLoading(false)
       
